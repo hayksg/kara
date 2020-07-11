@@ -88,6 +88,9 @@
 	<div id="header-bottom">
 		<div class="container">
 			<div class="header-bottom-wrap">
+				<script type="text/javascript">
+					var templateUrl = '<?= get_bloginfo("template_url"); ?>';
+				</script>
 				<a href="./" id="logo"></a>
 				
 				<ul id="nav">

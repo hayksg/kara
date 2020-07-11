@@ -15,5 +15,5 @@
         <?php wp_reset_postdata(); ?>
 
 	</ul>
-	<h1 class="container text-center" id="slider-caption">Welcome to Armenia</h1>
+	<h1 class="container text-center" id="slider-caption"><?php echo esc_attr(get_option( 'hero_title' )) ?></h1>
 </section>

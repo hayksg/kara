@@ -134,9 +134,8 @@
 			$('#nav a, #nav span').css('color', '#000');
 			$('#header-bottom').css('box-shadow', '0 2px 15px 0 rgba(0,0,0,0.2)');
 			$('#header-bottom').css('transform', 'translateY(-52px)');
-			$('#logo').css('background', 'url(_assets_/images/logo.png) left top/70px no-repeat');
 			$('#logo').css({
-				'background': 'url(_assets_/images/logo.png) left top/70px no-repeat',
+				'background': "url('"+templateUrl+"/site/images/logo.png') left top/70px no-repeat",
 				'top': 7,
 				'height': 95,
 				'width': 82,
@@ -149,7 +148,7 @@
 			$('#header-bottom').css('transform', 'translateY(0)');
 		
 			$('#logo').css({
-				'background': 'url(_assets_/images/logo-white.png) left top/120px no-repeat',
+				'background': "url('"+templateUrl+"/site/images/logo-white.png') left top/120px no-repeat",
 				'top': 23,
 				'height': 155,
 				'width': 120,
