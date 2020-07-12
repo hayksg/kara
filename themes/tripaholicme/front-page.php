@@ -4,40 +4,7 @@
 
 <main id="main">
 
-	<section id="btns">
-		<div id="btns-wrap">
-			<div class="container">
-				<div id="btn-slider-wrap">
-					<div id="btn-slider">				
-						<a href="./" class="btn-item">
-							<div class="btn-link-in" style="background:url('_assets_/images/btns-img1.jpg') top/cover no-repeat;"></div>
-							<span class="btn-link-title">Cultural tourism</span>
-						</a>
-
-						<a href="./" class="btn-item">
-							<div class="btn-link-in" style="background:url('_assets_/images/btns-img2.jpg') top/cover no-repeat;"></div>
-							<span class="btn-link-title">Medical or health tourism</span>
-						</a>
-
-						<a href="./" class="btn-item">
-							<div class="btn-link-in" style="background:url('_assets_/images/btns-img3.jpg') top/cover no-repeat;"></div>
-							<span class="btn-link-title">Religious tourism</span>
-						</a>
-
-						<a href="./" class="btn-item">
-							<div class="btn-link-in" style="background:url('_assets_/images/btns-img4.jpg') top/cover no-repeat;"></div>
-							<span class="btn-link-title">Sports tourism</span>
-						</a>
-
-						<a href="./" class="btn-item">
-							<div class="btn-link-in" style="background:url('_assets_/images/btns-img2.jpg') top/cover no-repeat;"></div>
-							<span class="btn-link-title">Nature tourism</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part( 'template-parts/content', 'categories-slider' ); ?>
 
 	<section id="news">
 		<div class="news-top">

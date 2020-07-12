@@ -5,7 +5,7 @@
                     <div class="footer-top-in-first">
                         <div class="footer-logo-box">
                             <a href="./" class="footer-logo">
-                                <img src="_assets_/images/logo.png" alt="logo image">
+                                <img src="<?php echo get_theme_file_uri('/site/images/logo.png')?>" alt="logo image">
                             </a>
                         </div>
                     </div>
