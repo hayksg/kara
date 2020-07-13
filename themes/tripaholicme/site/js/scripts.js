@@ -188,12 +188,6 @@
 	managingNavs(matchMediaQuery);
 	matchMediaQuery.addListener(managingNavs);
 
-
-
-
-
-
-
 	$(window).load(function() {
 
 
@@ -214,6 +208,17 @@
 			}
 		);
 	
+	});
+
+
+
+
+
+
+	$( "#page-category-links a" ).each(function() {
+		if ($(location).attr("href").indexOf($(this).attr('href')) > -1) {
+			$(this).css('color', '#8BBBBC');
+		}
 	});
 		
 

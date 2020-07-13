@@ -91,7 +91,7 @@
 				<script type="text/javascript">
 					var templateUrl = '<?= get_bloginfo("template_url"); ?>';
 				</script>
-				<a href="./" id="logo"></a>
+				<a href="<?php echo site_url() ?>" id="logo"></a>
 				
 				<ul id="nav">
 					<li><a href="./">Home</a></li>

@@ -164,12 +164,14 @@ header{position:relative;z-index:200}
 #page-category-links{margin:0 0 30px;padding:0 0 20px;list-style:none;border-bottom:1px solid #8BBBBC}
 .page-category-link{display:inline-block;line-height:1;font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;color:#fff;text-decoration:none;transition:all 320ms;padding:10px 0}
 .page-category-link:hover,.page-category-link:focus{color:#8BBBBC;text-decoration:none}
+.page-category-link-active{color:#8BBBBC}
 #page-title{font-family:'Merriweather',serif;font-weight:900;font-size:40px;color:#333;margin-bottom:30px}
 .fullwidth #page-content{padding-right:0}
 
 /* #bxslider */
 #slider{height:950px;position:relative;border-bottom:5px solid #357376}
-#page #slider{height:500px}
+.archive #slider{height:500px}
+.single #slider{height:500px}
 #slider-caption{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:51;font-family: 'Satisfy',cursive;font-size:120px;color:#fff;text-shadow: 0 0 13.92px rgba(0,0,0,0.4);pointer-events:none}
 .bxslider{padding:0;margin:0}
 .bxslider,

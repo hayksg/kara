@@ -5,7 +5,7 @@
                 <div id="btn-slider" style="color:white">				
                     <?php     
                         $terms = get_terms( array(
-                            'taxonomy' => 'tour_categories',
+                            'taxonomy' => 'tour-categories',
                             'hide_empty' => false,
                         ) );
                 
