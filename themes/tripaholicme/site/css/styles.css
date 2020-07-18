@@ -62,6 +62,7 @@ header{position:relative;z-index:200}
 .header-bottom-wrap{position:relative;text-align:right}
 
 #logo{display:inline-block;float:left;line-height:1;position:relative;top:23px;left:0;z-index:200;background:url(../images/logo-white.png) left top/120px no-repeat;height:155px;width:120px;transition:all 320ms}
+.menu-header-menu-container{display:inline-block}
 #nav{padding:0;margin:0;position:relative;top:25px;right:-15px}
 #nav li{position:relative;margin:0 20px;display:inline-block}
 #nav a{display:block;font-size:17px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#fff;text-decoration:none;text-transform:uppercase;padding:10px 0;letter-spacing:0.9px;transition:all 320ms}
@@ -107,7 +108,7 @@ header{position:relative;z-index:200}
 .news-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:#2b2929;margin-top:1px;margin-bottom:12px;line-height:1.2}
 .news-text{font-family:'Poppins',sans-serif;font-weight:400;font-size:17px;color:#231f20;margin:10px 0 20px;line-height:1.2}
 .read-more{display:block;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#357376;text-decoration:none;text-transform:uppercase;letter-spacing:1.1px;transition:all 320ms}
-.news:hover{text-decoration:none}
+.news:hover, .news:focus{text-decoration:none}
 .news:hover .read-more{text-decoration:none;color:#6ba8a9}
 .news:hover .news-banner{transform:scale(1.1)}
 #news .owl-prev,#news .owl-next{position:absolute;top:50%;transform:translateY(-50%);cursor:pointer;z-index:9999999}
@@ -169,9 +170,10 @@ header{position:relative;z-index:200}
 .fullwidth #page-content{padding-right:0}
 
 /* #bxslider */
-#slider{height:950px;position:relative;border-bottom:5px solid #357376}
-.archive #slider{height:500px}
-.single #slider{height:500px}
+.home #slider{height:950px!important;position:relative;border-bottom:5px solid #357376}
+.archive #slider{height:350px}
+.single #slider{height:350px}
+.page #slider{height:350px}
 #slider-caption{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:51;font-family: 'Satisfy',cursive;font-size:120px;color:#fff;text-shadow: 0 0 13.92px rgba(0,0,0,0.4);pointer-events:none}
 .bxslider{padding:0;margin:0}
 .bxslider,

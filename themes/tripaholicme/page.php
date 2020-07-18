@@ -9,8 +9,8 @@
 				<aside id="page-aside">
 					<div id="aside-nav-toggle" class="hidden-lg hidden-md"><i class="fa fa-bars"></i> Sub Menu</div>
 					<nav id="aside-nav">
-						<h2 class="aside-header">Categories</h2>
-						<ul id="page-category-links">
+                        <h2 class="aside-header">Categories</h2>
+                        <ul id="page-category-links">
                             <?php     
                                 $terms = get_terms( array(
                                     'taxonomy' => 'tour-categories',
@@ -36,29 +36,26 @@
                     <?php the_post(); ?>
 
                     
-                    <h1 id="page-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                    <h1 id="page-title"><?php the_title(); ?></h1>
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <img src="<?php the_post_thumbnail_url() ?>" alt="page image">
+                    <?php endif ?>
 
-                    <div><?php the_excerpt(); ?></div>
-                 
-					<hr>
+                    
+                    <br>
+                    <br>
+                    <div><?php the_content(); ?></div>
+
                         
 
                         
 
                     <?php endwhile; ?>
 					
-
-         
-
-
 				</div>
-
-				<?php echo paginate_links() ?>
 			</div>
 		</div>
 	</div>
-
-	
 </main>
 
 <?php get_footer(); ?>

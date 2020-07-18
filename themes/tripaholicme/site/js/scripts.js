@@ -125,6 +125,7 @@
 	// matchHeight
 	if(typeof $.fn.matchHeight !== "undefined"){
 		$('.news-title').matchHeight();
+		$('.news-text').matchHeight();
 	}
 
 	// Managing header

@@ -50,7 +50,11 @@
 
                     
                     <h1 id="page-title"><?php the_title(); ?></h1>
-
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <img src="<?php the_post_thumbnail_url() ?>" alt="tour image">
+                    <?php endif ?>
+                    <br>
+                    <br>
                     <div><?php the_content(); ?></div>
 
                         

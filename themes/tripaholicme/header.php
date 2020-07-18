@@ -7,7 +7,8 @@
     <meta charset="<?php bloginfo( 'charset' )?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="shortcut icon" href="<?php echo get_theme_file_uri('/site/images/favicon.ico')?>">
     <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php endif; ?>
@@ -93,13 +94,20 @@
 				</script>
 				<a href="<?php echo site_url() ?>" id="logo"></a>
 				
-				<ul id="nav">
+				<!-- <ul id="nav">
 					<li><a href="./">Home</a></li>
 					<li><a href="./">About us</a></li>
 					<li><a href="./">Link 3</a></li>
 					<li><a href="./">Link 4</a></li>
 					<li><a href="./">Link 5</a></li>
-				</ul>
+				</ul> -->
+
+				<?php
+					wp_nav_menu(array(
+						'theme_location' => 'headerMenuLocation',
+						'menu_id'        => 'nav',
+					));
+				?>
 			</div>
 		</div>
 	</div>

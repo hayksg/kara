@@ -6,82 +6,15 @@
 
 	<?php get_template_part( 'template-parts/content', 'categories-slider' ); ?>
 
-	<section id="news">
-		<div class="news-top">
-			<div class="container">
-				<h2 class="site-title">Hot tours</h2>
-			</div>
-		</div>
-
-		<div class="news-bottom">
-			<div class="container">
-				<div id="news-slider">
-					<a href="./" class="news">
-						<div class="news-banner-wrap">
-							<div class="news-banner" style="background:url('_assets_/images/news-img1.jpg') center/cover no-repeat;"></div>
-						</div>
-						<div class="news-info">
-							<h3 class="news-title">Tour title 1</h3>
-							<p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper aliquam dui nec lobortis. Aliquam blandit varius eros facilisis cursus.</p>
-							<span class="read-more">read more</span>
-						</div>
-					</a>
-
-					<a href="./" class="news">
-						<div class="news-banner-wrap">
-							<div class="news-banner" style="background:url('_assets_/images/news-img2.jpg') center/cover no-repeat;"></div>
-						</div>
-						<div class="news-info">
-							<h3 class="news-title">Tour title 2</h3>
-							<p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper aliquam dui nec lobortis. Aliquam blandit varius eros facilisis cursus.</p>
-							<span class="read-more">read more</span>
-						</div>
-					</a>
-
-					<a href="./" class="news">
-						<div class="news-banner-wrap">
-							<div class="news-banner" style="background:url('_assets_/images/news-img3.jpg') center/cover no-repeat;"></div>
-						</div>
-						<div class="news-info">
-							<h3 class="news-title">Tour title 3</h3>
-							<p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper aliquam dui nec lobortis. Aliquam blandit varius eros facilisis cursus.</p>
-							<span class="read-more">read more</span>
-						</div>
-					</a>
-
-					<a href="./" class="news">
-						<div class="news-banner-wrap">
-							<div class="news-banner" style="background:url('_assets_/images/news-img1.jpg') center/cover no-repeat;"></div>
-						</div>
-						<div class="news-info">
-							<h3 class="news-title">Tour title 4</h3>
-							<p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper aliquam dui nec lobortis. Aliquam blandit varius eros facilisis cursus.</p>
-							<span class="read-more">read more</span>
-						</div>
-					</a>
-
-					<a href="./" class="news">
-						<div class="news-banner-wrap">
-							<div class="news-banner" style="background:url('_assets_/images/news-img2.jpg') center/cover no-repeat;"></div>
-						</div>
-						<div class="news-info">
-							<h3 class="news-title">Tour title 5</h3>
-							<p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper aliquam dui nec lobortis. Aliquam blandit varius eros facilisis cursus.</p>
-							<span class="read-more">read more</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part( 'template-parts/content', 'homepage-news-section' ); ?>
 
 	<section id="about-us">
 		<div class="container">
 			<div id="about-us-box">
-				<h3 class="site-title">about us</h3>
-				<p class="about-us-text">Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Donec sed odio dui.</p>
-				<p class="about-us-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-				<a href="./" class="site-btn">learn more</a>
+				<?php $aboutUsPage = get_page_by_title( 'About us' ); ?>
+				<h3 class="site-title"><?php echo $aboutUsPage->post_title ?></h3>
+				<p class="about-us-text"><?php echo $aboutUsPage->post_excerpt ?></p>
+				<a href="<?php echo $aboutUsPage->guid ?>" class="site-btn">learn more</a>
 			</div>
 		</div>
 	</section>	
