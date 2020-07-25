@@ -53,20 +53,20 @@
 	}
 
 	// Owl Slider
-	var btnCount = $("#btn-slider .btn-item").length;
-	function btnItems(cnt) {return btnCount > cnt ? cnt : btnCount;}
-	function btnNav(cnt) {return btnCount > cnt ? true : false;}
+	var categoriesCount = $("#categories-slider .categories-item").length;
+	function categoriesItems(cnt) {return categoriesCount > cnt ? cnt : categoriesCount;}
+	function categoriesNav(cnt) {return categoriesCount > cnt ? true : false;}
 
-	var newsCount = $("#news-slider .news").length;
-	function newsItems(cnt) {return newsCount > cnt ? cnt : newsCount;}
-	function newsNav(cnt) {return newsCount > cnt ? true : false;}
+	var hotToursCount = $("#hot-tours-slider .hot-tours").length;
+	function hotToursItems(cnt) {return hotToursCount > cnt ? cnt : hotToursCount;}
+	function hotToursNav(cnt) {return hotToursCount > cnt ? true : false;}
 
 	var testimonialsCount = $("#testimonials-slider .testimonials-slider-item").length;
 	function testimonialsItems(cnt) {return testimonialsCount > cnt ? cnt : testimonialsCount;}
 	function testimonialsNav(cnt) {return testimonialsCount > cnt ? true : false;}
 
 	if(typeof $.fn.owlCarousel !== "undefined"){
-		$("#btn-slider").owlCarousel({
+		$("#categories-slider").owlCarousel({
 			navText: ["<i class='fa fa-chevron-circle-left'></i>","<i class='fa fa-chevron-circle-right'></i>"], 
 			autoplay: true,
 			autoplayTimeout: 10000,
@@ -76,28 +76,28 @@
 			responsive: {
 				0: {
 					items: 1,
-					nav: btnNav(1),
+					nav: categoriesNav(1),
 					stagePadding: 0,
 				},
 				650: {
-					items: btnItems(2),
-					nav: btnNav(2),
+					items: categoriesItems(2),
+					nav: categoriesNav(2),
 					stagePadding: 0,
 				},
 				991: {
-					items: newsItems(3),
-					nav: newsNav(3),
+					items: categoriesItems(3),
+					nav: categoriesNav(3),
 				
                 },
 				1400: {
-					items: btnItems(4),
-					nav: btnNav(4),
+					items: categoriesItems(4),
+					nav: categoriesNav(4),
 					
 				}
 			}
 		});
 
-		$("#news-slider").owlCarousel({
+		$("#hot-tours-slider").owlCarousel({
 			navText: ["<i class='fa fa-chevron-circle-left'></i>","<i class='fa fa-chevron-circle-right'></i>"], 
 			autoplay: true,
 			margin: 30,
@@ -106,21 +106,21 @@
             responsive: {
                 0: {
                     items: 1,
-					nav: newsNav(1),
+					nav: hotToursNav(1),
 					stagePadding:0,
                 },
                 650: {
-                    items: newsItems(2),
-					nav: newsNav(2),
+                    items: hotToursItems(2),
+					nav: hotToursNav(2),
 					stagePadding:0,
                 },
                 991: {
-					items: newsItems(3),
-					nav: newsNav(3),
+					items: hotToursItems(3),
+					nav: hotToursNav(3),
 				},
 				1400: {
-					items: newsItems(4),
-					nav: newsNav(4),
+					items: hotToursItems(4),
+					nav: hotToursNav(4),
 				}
             }
 		});
@@ -135,7 +135,7 @@
                     items: 1,
 					nav: testimonialsNav(1),
                 },
-                650: {
+                992: {
                     items: testimonialsItems(2),
 					nav: testimonialsNav(2),
                 }
@@ -145,8 +145,9 @@
 
 	// matchHeight
 	if(typeof $.fn.matchHeight !== "undefined"){
-		$('.news-title').matchHeight();
-		$('.news-text').matchHeight();
+		$('.hot-tours-title').matchHeight();
+		$('.hot-tours-text').matchHeight();
+		$('.testimonials-slider-message').matchHeight();
 	}
 
 	// Managing header

@@ -1,8 +1,8 @@
-<section id="btns">
-    <div id="btns-wrap">
+<section id="categories">
+    <div id="categories-wrap">
         <div class="container">
-            <div id="btn-slider-wrap">
-                <div id="btn-slider" style="color:white">				
+            <div id="categories-slider-wrap">
+                <div id="categories-slider" style="color:white">				
                     <?php     
                         $terms = get_terms( array(
                             'taxonomy' => 'tour-categories',
@@ -14,9 +14,9 @@
                             $term_link = get_term_link( $term );
                     ?>
 
-                    <a href="<?php echo $term_link ?>" class="btn-item">
-                        <div class="btn-link-in" style="background:url('<?php echo $image['url'] ?>') top/cover no-repeat;"></div>
-                        <span class="btn-link-title"><?php echo $term->name ?></span>
+                    <a href="<?php echo $term_link ?>" class="categories-item">
+                        <div class="categories-link-in" style="background:url('<?php echo $image['url'] ?>') top/cover no-repeat;"></div>
+                        <span class="categories-link-title"><?php echo $term->name ?></span>
                     </a>
 
                     <?php endforeach ?>

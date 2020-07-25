@@ -34,6 +34,22 @@ function tripaholicme_post_types() {
         'supports'  => array( 'title', 'thumbnail' ),
     ) );
 
+    // Testimonials Post Type
+    register_post_type( 'testimonials', array(
+        'labels' => array(
+            'name'          => 'Testimonials',
+            'add_new_item'  => 'Add New Testimonial',
+            'edit_item'     => 'Edit Testimonial',
+            'all_items'     => 'All Testimonials',
+            'singular_name' => 'Testimonial',
+        ),
+        'public'    => true,
+        'show_ui'   => true,  // show in admin panel
+        'rewrite'   => array( 'slug' => 'testimonials' ),
+        'menu_icon' => 'dashicons-testimonial',
+        'supports'  => array( 'title', 'excerpt', 'thumbnail' ),
+    ) );
+
     // Tour Post Type
     register_post_type( 'tour', array(
         'labels' => array(
@@ -66,8 +82,15 @@ function tripaholicme_post_types() {
 add_action( 'init', 'tripaholicme_post_types' );
 
 
+// Filter for changing "Add title" to "Enter name"
+function custom_enter_title( $input ) {
+    global $post_type;
 
+    if( is_admin() && 'Add title' == $input && 'testimonials' == $post_type ) {
+        return 'Enter name';
+    }
 
+    return $input;
+}
 
-
-
+add_filter('gettext','custom_enter_title');

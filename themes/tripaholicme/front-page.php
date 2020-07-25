@@ -19,46 +19,7 @@
 		</div>
 	</section>	
 
-	<section id="testimonials">
-		<div class="container">
-			<h2 class="site-title">what our customers are saying</h2>
-			<div id="testimonials-slider">
-
-				<div class="testimonials-slider-item">
-					<img src="<?php echo get_template_directory_uri() ?>/site/images/testimonials-img1.jpg" alt="testimonial image" class="testimonial-img">
-					<div class="testimonials-slider-item-data">
-						<div class="testimonials-slider-message">Lorem ipsum dolor sit amet, consec adipiscing elit. Nam eusem scelerisque tempor, varius quam luctus dui. Mauris magna metus nec.</div>
-						<div class="testimonials-slider-author">Lexi Williams</div>
-					</div>
-				</div>
-
-				<div class="testimonials-slider-item">
-					<img src="<?php echo get_template_directory_uri() ?>/site/images/testimonials-img2.jpg" alt="testimonial image" class="testimonial-img">
-					<div class="testimonials-slider-item-data">
-						<div class="testimonials-slider-message">Lorem ipsum dolor sit amet, consec adipiscing elit. Nam eusem scelerisque tempor, varius quam luctus dui. Mauris magna metus nec.</div>
-						<div class="testimonials-slider-author">Jason Richmond</div>
-					</div>
-				</div>
-
-				<div class="testimonials-slider-item">
-					<img src="<?php echo get_template_directory_uri() ?>/site/images/testimonials-img3.jpg" alt="testimonial image" class="testimonial-img">
-					<div class="testimonials-slider-item-data">
-						<div class="testimonials-slider-message">Lorem ipsum dolor sit amet, consec adipiscing elit. Nam eusem scelerisque tempor, varius quam luctus dui. Mauris magna metus nec.</div>
-						<div class="testimonials-slider-author">Dustin Freeze</div>
-					</div>
-				</div>
-
-				<div class="testimonials-slider-item">
-					<img src="<?php echo get_template_directory_uri() ?>/site/images/testimonials-img4.jpg" alt="testimonial image" class="testimonial-img">
-					<div class="testimonials-slider-item-data">
-						<div class="testimonials-slider-message">Lorem ipsum dolor sit amet, consec adipiscing elit. Nam eusem scelerisque tempor, varius quam luctus dui. Mauris magna metus nec.</div>
-						<div class="testimonials-slider-author">Amber Metz</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</section>
+	<?php get_template_part( 'template-parts/content', 'testimonials-slider' ); ?>
 </main>
 
 <?php get_footer(); ?>
