@@ -42,15 +42,22 @@
 				</div>
 				<div class="col-md-7">
 					<div class="header-top-right-block">
-						<span class="stay-connected">Follow Us:</span>
 						<div id="social-media-links">
 							<a href="./" class="social-media-link" target="_blank">
-								<span class="sr-only">Twitter link</span>
+								<span class="sr-only">Facebook</span>
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							<a href="./" class="social-media-link" target="_blank">
+								<span class="sr-only">Twitter</span>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
 							</a>
 							<a href="./" class="social-media-link" target="_blank">
-								<span class="sr-only">Facebook link</span>
-								<i class="fa fa-facebook" aria-hidden="true"></i>
+								<span class="sr-only">Instagram</span>
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+							<a href="./" class="social-media-link" target="_blank">
+								<span class="sr-only">Youtube</span>
+								<i class="fa fa-youtube-play" aria-hidden="true"></i>
 							</a>
 						</div>
 
