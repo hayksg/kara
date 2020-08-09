@@ -129,7 +129,8 @@ header{position:relative;z-index:200}
 #hot-tours-slider .owl-item:not(.active) a {pointer-events:none}
 
 /* Section about us */
-#about-us{position:relative;min-height:800px;background:url(../images/about-bg.png) center/cover no-repeat}
+/* #about-us{position:relative;min-height:800px;background:url(../images/about-bg.png) center/cover no-repeat} */
+#about-us{position:relative;min-height:800px}
 #about-us-bg{height:660px;position:absolute;left:0;bottom:0;width:100%}
 #about-us-box{border-radius:8px;background-color:#fff;box-shadow:0 10px 20px 0 rgba(0,0,0,0.07);max-width:600px;min-height:481px;text-align:center;float:right;padding:58px 50px;margin-top:100px}
 #about-us-box .site-title{margin-bottom:40px}
@@ -177,6 +178,8 @@ header{position:relative;z-index:200}
 .footer-top-links-box a:hover{text-decoration:none;color:#357376}
 .copyright{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#fff}
 #footer-right-block{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#fff;text-align:right}
+#back-to-top{position:fixed;justify-content:center;align-items:center;bottom:100px;right:15px;opacity:0;cursor:pointer;z-index:999;background:#357376;padding:0;outline:none;border:none;border-radius:50%;width:50px;height:50px;color:#fff}
+#back-to-top:hover{background:#6BA8A9}
 
 /* #page */
 #page-main{padding:50px 0 100px}

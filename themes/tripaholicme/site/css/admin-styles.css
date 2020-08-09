@@ -1,0 +1,15 @@
+#about-us-bg-picture-preview{
+    height:200px;
+    width:300px;
+    margin-bottom:20px;
+}
+
+#upload-button{
+    border:none;
+    background:#ccc;
+    color:#23282d;
+}
+
+#upload-button:hover{
+    background:#bbb;
+}

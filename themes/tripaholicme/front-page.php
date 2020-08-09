@@ -7,8 +7,8 @@
 	<?php get_template_part( 'template-parts/content', 'categories-slider' ); ?>
 
 	<?php get_template_part( 'template-parts/content', 'homepage-news-section' ); ?>
-
-	<section id="about-us">
+	
+	<section id="about-us" style="background: url('<?php echo esc_attr(get_option( 'about_us_bg_picture' )) ?>') center/cover no-repeat">
 		<div class="container">
 			<div id="about-us-box">
 				<?php $aboutUsPage = get_page_by_title( 'About us' ); ?>

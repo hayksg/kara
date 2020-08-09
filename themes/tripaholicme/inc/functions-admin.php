@@ -25,11 +25,11 @@ function tripaholicme_add_admin_page() {
 
     add_submenu_page(
         'tripaholicme-slug',                // parent_slug
-        'Tripaholicme Header Options',      // page_title
-        'Hero Options',                   // menu_title
+        'Tripaholicme Main Options',      // page_title
+        'Main Options',                   // menu_title
         'manage_options',                   // capability
-        'tripaholicme-hero-options-slug', // menu_slug
-        'tripaholicme_hero_options_page'  // function
+        'tripaholicme-main-options-slug', // menu_slug
+        'tripaholicme_main_options_page'  // function
     );
 
     add_submenu_page(
@@ -51,8 +51,8 @@ function tripaholicme_header_options_page() {
     require_once( get_template_directory() . '/inc/templates/tripaholicme-header-options.php');
 }
 
-function tripaholicme_hero_options_page() {
-    require_once( get_template_directory() . '/inc/templates/tripaholicme-hero-options.php');
+function tripaholicme_main_options_page() {
+    require_once( get_template_directory() . '/inc/templates/tripaholicme-main-options.php');
 }
 
 function tripaholicme_footer_options_page() {
@@ -60,23 +60,24 @@ function tripaholicme_footer_options_page() {
 }
 
 function tripaholicme_custom_settings() {
-    // Header Options
+    add_settings_section( 'tripaholicme-header-options', 'Header Options', 'tripaholicme_header_options', 'tripaholicme-slug' );
+
     register_setting( 'tripaholicme-settings-group', 'business_email' );
     register_setting( 'tripaholicme-settings-group', 'business_phone' );
     
-
-    add_settings_section( 'tripaholicme-header-options', 'Header Options', 'tripaholicme_header_options', 'tripaholicme-slug' );
-   
-  
     add_settings_field( 'header_business_email', 'Business Email', 'tripaholicme_header_business_email', 'tripaholicme-slug', 'tripaholicme-header-options' );
     add_settings_field( 'header_business_phone', 'Business Phone', 'tripaholicme_header_business_phone', 'tripaholicme-slug', 'tripaholicme-header-options' );
     
 
 
 
-    register_setting( 'tripaholicme-hero-title', 'hero_title' );
-    add_settings_section( 'tripaholicme-hero-options', 'Hero Options', 'tripaholicme_hero_options', 'tripaholicme-hero-options-slug' );
-    add_settings_field( 'hero_title', 'Hero Title', 'tripaholicme_hero_title', 'tripaholicme-hero-options-slug', 'tripaholicme-hero-options' );
+    add_settings_section( 'tripaholicme-main-options', 'Main Options', 'tripaholicme_main_options', 'tripaholicme-main-options-slug' );
+
+    register_setting( 'tripaholicme-main-settings-group', 'hero_title' );
+    register_setting( 'tripaholicme-main-settings-group', 'about_us_bg_picture' );
+
+    add_settings_field( 'hero_title', 'Hero Title', 'tripaholicme_hero_title', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+    add_settings_field( 'about-us-bg-picture', 'About Us Background Picture', 'tripaholicme_about_us_bg_picture', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
 }
 
 // Header Options Functions
@@ -95,11 +96,25 @@ function tripaholicme_header_business_phone() {
     echo '<input type="text" name="business_phone" value="' . $businessPhone . '" placeholder="Phone">';
 }
 
-function tripaholicme_hero_options() {
-    echo "Customize your Hero Information";
+function tripaholicme_main_options() {
+    echo "Customize your Main Information";
 }
 
 function tripaholicme_hero_title() {
     $heroTitle = esc_attr(get_option( 'hero_title' ));
     echo '<input type="text" name="hero_title" value="' . $heroTitle . '" placeholder="Hero title here">';
+}
+
+function tripaholicme_about_us_bg_picture() {
+    $aboutUsBgPicture = esc_attr(get_option( 'about_us_bg_picture' ));
+
+    echo '<input type="hidden" name="about_us_bg_picture" id="about-us-bg-picture" value="' . $aboutUsBgPicture . '">';
+
+    echo '
+    <div class="image-container">
+		<div id="about-us-bg-picture-preview" style="background: url(' . $aboutUsBgPicture . ') center/cover no-repeat;"></div>
+	</div> ';
+  
+   
+    echo '<input type="button" class="button button-secondary" value="Upload About Us Background Picture" id="upload-button">';
 }

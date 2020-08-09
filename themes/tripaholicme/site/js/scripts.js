@@ -243,6 +243,45 @@
 			$(this).css('color', '#8BBBBC');
 		}
 	});
+
+
+
+
+
+
+
+
+	/* Back to top */
+
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 1000) {
+			$('#back-to-top').css({
+				opacity: 1,
+				transform: 'translateX(5px)',
+				transition: 'all .5s'
+		  	});
+		} else {
+			$('#back-to-top').css({
+				opacity: 0,
+				transform: 'translateX(100px)',
+				transition: 'all .5s'
+			});
+		}
+	});
+	   
+	$('#back-to-top').click(function () { 
+		$('body,html').animate({scrollTop: 0}, 800);
+	    return false;
+	});
+
+
+
+
+
+
+
+
+	
 		
 
 })(jQuery);

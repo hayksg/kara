@@ -64,6 +64,10 @@
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </button><!-- /#back-to-top -->
     
     <?php wp_footer(); ?>
     </body>
