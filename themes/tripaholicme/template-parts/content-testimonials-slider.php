@@ -1,6 +1,6 @@
 <section id="testimonials">
     <div class="container">
-        <h2 class="site-title">what our customers are saying</h2>
+        <h2 class="site-title"><?php echo esc_attr(get_option( 'testimonials_title' )) ?></h2>
         <div id="testimonials-slider">
 
         <?php 

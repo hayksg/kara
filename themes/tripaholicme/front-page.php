@@ -6,7 +6,7 @@
 
 	<?php get_template_part( 'template-parts/content', 'categories-slider' ); ?>
 
-	<?php get_template_part( 'template-parts/content', 'homepage-news-section' ); ?>
+	<?php get_template_part( 'template-parts/content', 'homepage-hot-tours-section' ); ?>
 	
 	<section id="about-us" style="background: url('<?php echo esc_attr(get_option( 'about_us_bg_picture' )) ?>') center/cover no-repeat">
 		<div class="container">

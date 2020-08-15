@@ -1,7 +1,7 @@
 <section id="hot-tours">
 	<div class="hot-tours-top">
 		<div class="container">
-			<h2 class="site-title">Hot tours</h2>
+			<h2 class="site-title"><?php echo esc_attr(get_option( 'hot_tours_title' )) ?></h2>
 		</div>
 	</div>
 

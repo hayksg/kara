@@ -4,30 +4,30 @@ function tripaholicme_add_admin_page() {
 
     // Generate Tripaholicme Admin Page
     add_menu_page( 
-        'Tripaholicme Theme Options',      // page_title
-        'Tripaholicme',                    // menu_title
-        'manage_options',                  // capability
-        'tripaholicme-slug',               // menu_slug
-        'tripaholicme_header_options_page', // function
+        'Tripaholicme Theme Options',                            // page_title
+        'Tripaholicme',                                          // menu_title
+        'manage_options',                                        // capability
+        'tripaholicme-slug',                                     // menu_slug
+        'tripaholicme_header_options_page',                      // function
         get_template_directory_uri() . '/site/images/admin.png', // icon_url
-        110                                // position
+        110                                                      // position
     );
 
     // Generate Tripaholicme Admin Sub Pages
     add_submenu_page(
-        'tripaholicme-slug',              // parent_slug
+        'tripaholicme-slug',               // parent_slug
         'Tripaholicme Header Options',     // page_title
         'Header Options',                  // menu_title
-        'manage_options',                 // capability
-        'tripaholicme-slug',              // menu_slug
+        'manage_options',                  // capability
+        'tripaholicme-slug',               // menu_slug
         'tripaholicme_header_options_page' // function
     );
 
     add_submenu_page(
-        'tripaholicme-slug',                // parent_slug
+        'tripaholicme-slug',              // parent_slug
         'Tripaholicme Main Options',      // page_title
         'Main Options',                   // menu_title
-        'manage_options',                   // capability
+        'manage_options',                 // capability
         'tripaholicme-main-options-slug', // menu_slug
         'tripaholicme_main_options_page'  // function
     );
@@ -60,6 +60,7 @@ function tripaholicme_footer_options_page() {
 }
 
 function tripaholicme_custom_settings() {
+    // header options
     add_settings_section( 'tripaholicme-header-options', 'Header Options', 'tripaholicme_header_options', 'tripaholicme-slug' );
 
     register_setting( 'tripaholicme-settings-group', 'business_email' );
@@ -68,16 +69,26 @@ function tripaholicme_custom_settings() {
     add_settings_field( 'header_business_email', 'Business Email', 'tripaholicme_header_business_email', 'tripaholicme-slug', 'tripaholicme-header-options' );
     add_settings_field( 'header_business_phone', 'Business Phone', 'tripaholicme_header_business_phone', 'tripaholicme-slug', 'tripaholicme-header-options' );
     
-
-
-
+    // main options
     add_settings_section( 'tripaholicme-main-options', 'Main Options', 'tripaholicme_main_options', 'tripaholicme-main-options-slug' );
 
     register_setting( 'tripaholicme-main-settings-group', 'hero_title' );
+    register_setting( 'tripaholicme-main-settings-group', 'hot_tours_title' );
+    register_setting( 'tripaholicme-main-settings-group', 'testimonials_title' );
     register_setting( 'tripaholicme-main-settings-group', 'about_us_bg_picture' );
+    register_setting( 'tripaholicme-main-settings-group', 'facebook_handler', 'tripaholicme_sanitize_form_data' );
+    register_setting( 'tripaholicme-main-settings-group', 'twitter_handler', 'tripaholicme_sanitize_form_data' );
+    register_setting( 'tripaholicme-main-settings-group', 'instagram_handler', 'tripaholicme_sanitize_form_data' );
+    register_setting( 'tripaholicme-main-settings-group', 'youtube_handler', 'tripaholicme_sanitize_form_data' );
 
     add_settings_field( 'hero_title', 'Hero Title', 'tripaholicme_hero_title', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+    add_settings_field( 'hot_tours_title', 'Hot Tours Title', 'tripaholicme_hot_tours_title', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+    add_settings_field( 'testimonials_title', 'Testimonials Title', 'tripaholicme_testimonials_title', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
     add_settings_field( 'about-us-bg-picture', 'About Us Background Picture', 'tripaholicme_about_us_bg_picture', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+    add_settings_field( 'facebook_handler', 'Facebook handler', 'tripaholicme_facebook', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+    add_settings_field( 'twitter_handler', 'Twitter handler', 'tripaholicme_twitter', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+    add_settings_field( 'instagram_handler', 'Instagram handler', 'tripaholicme_instagram', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+    add_settings_field( 'youtube_handler', 'Youtube handler', 'tripaholicme_youtube', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
 }
 
 // Header Options Functions
@@ -102,7 +113,17 @@ function tripaholicme_main_options() {
 
 function tripaholicme_hero_title() {
     $heroTitle = esc_attr(get_option( 'hero_title' ));
-    echo '<input type="text" name="hero_title" value="' . $heroTitle . '" placeholder="Hero title here">';
+    echo '<input type="text" name="hero_title" class="admin-main-input" value="' . $heroTitle . '" placeholder="Hero title here">';
+}
+
+function tripaholicme_hot_tours_title() {
+    $hotToursTitle = esc_attr(get_option( 'hot_tours_title' ));
+    echo '<input type="text" name="hot_tours_title" class="admin-main-input" value="' . $hotToursTitle . '" placeholder="Hot Tours title here">';
+}
+
+function tripaholicme_testimonials_title() {
+    $testimonialsTitle = esc_attr(get_option( 'testimonials_title' ));
+    echo '<input type="text" name="testimonials_title" class="admin-main-input" value="' . $testimonialsTitle . '" placeholder="Testimonials title here">';
 }
 
 function tripaholicme_about_us_bg_picture() {
@@ -117,4 +138,30 @@ function tripaholicme_about_us_bg_picture() {
   
    
     echo '<input type="button" class="button button-secondary" value="Upload About Us Background Picture" id="upload-button">';
+}
+
+function tripaholicme_facebook() {
+    $facebook = esc_attr(get_option( 'facebook_handler' ));
+    echo '<input type="text" name="facebook_handler" class="admin-main-input" value="' . $facebook . '" placeholder="Facebook address">';
+}
+
+function tripaholicme_twitter() {
+    $twitter = esc_attr(get_option( 'twitter_handler' ));
+    echo '<input type="text" name="twitter_handler" class="admin-main-input" value="' . $twitter . '" placeholder="Twitter address">';
+}
+  
+function tripaholicme_instagram() {
+    $instagram = esc_attr(get_option( 'instagram_handler' ));
+    echo '<input type="text" name="instagram_handler" class="admin-main-input" value="' . $instagram . '" placeholder="Instagram address">';
+}
+
+function tripaholicme_youtube() {
+    $youtube = esc_attr(get_option( 'youtube_handler' ));
+    echo '<input type="text" name="youtube_handler" class="admin-main-input" value="' . $youtube . '" placeholder="Youtube address">';
+}
+
+// Sanitization settings
+function tripaholicme_sanitize_form_data( $input ) {
+    $output = sanitize_text_field( $input );
+    return $output;
 }

@@ -43,19 +43,19 @@
 				<div class="col-md-7">
 					<div class="header-top-right-block">
 						<div id="social-media-links">
-							<a href="./" class="social-media-link" target="_blank">
+							<a href="<?php echo esc_attr(get_option( 'facebook_handler' )) ?>" class="social-media-link" target="_blank">
 								<span class="sr-only">Facebook</span>
 								<i class="fa fa-facebook" aria-hidden="true"></i>
 							</a>
-							<a href="./" class="social-media-link" target="_blank">
+							<a href="<?php echo esc_attr(get_option( 'twitter_handler' )) ?>" class="social-media-link" target="_blank">
 								<span class="sr-only">Twitter</span>
 								<i class="fa fa-twitter" aria-hidden="true"></i>
 							</a>
-							<a href="./" class="social-media-link" target="_blank">
+							<a href="<?php echo esc_attr(get_option( 'instagram_handler' )) ?>" class="social-media-link" target="_blank">
 								<span class="sr-only">Instagram</span>
 								<i class="fa fa-instagram" aria-hidden="true"></i>
 							</a>
-							<a href="./" class="social-media-link" target="_blank">
+							<a href="<?php echo esc_attr(get_option( 'youtube_handler' )) ?>" class="social-media-link" target="_blank">
 								<span class="sr-only">Youtube</span>
 								<i class="fa fa-youtube-play" aria-hidden="true"></i>
 							</a>
@@ -100,14 +100,6 @@
 					var templateUrl = '<?= get_bloginfo("template_url"); ?>';
 				</script>
 				<a href="<?php echo site_url() ?>" id="logo"></a>
-				
-				<!-- <ul id="nav">
-					<li><a href="./">Home</a></li>
-					<li><a href="./">About us</a></li>
-					<li><a href="./">Link 3</a></li>
-					<li><a href="./">Link 4</a></li>
-					<li><a href="./">Link 5</a></li>
-				</ul> -->
 
 				<?php
 					wp_nav_menu(array(

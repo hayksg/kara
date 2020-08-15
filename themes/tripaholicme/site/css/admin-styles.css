@@ -13,3 +13,7 @@
 #upload-button:hover{
     background:#bbb;
 }
+
+.admin-main-input{
+    min-width: 300px!important;
+}

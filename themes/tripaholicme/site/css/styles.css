@@ -30,7 +30,7 @@ header{position:relative;z-index:200}
 
 .header-top-right-block{text-align:right;display:flex;justify-content:flex-end;align-items:center;min-height:52px}
 
-#social-media-links{display:block;position:fixed;left:0;top:50%;transform:translateY(-50%);width:40px}
+#social-media-links{display:block;position:fixed;left:0;top:50%;transform:translateY(-50%);width:40px;z-index:400}
 .social-media-link{display:flex;align-items:center;justify-content:center;text-decoration:none;width:40px;height:40px}
 .social-media-link:nth-child(1){background:#3B5998}
 .social-media-link:nth-child(2){background:#00ACED}
@@ -178,7 +178,7 @@ header{position:relative;z-index:200}
 .footer-top-links-box a:hover{text-decoration:none;color:#357376}
 .copyright{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#fff}
 #footer-right-block{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#fff;text-align:right}
-#back-to-top{position:fixed;justify-content:center;align-items:center;bottom:100px;right:15px;opacity:0;cursor:pointer;z-index:999;background:#357376;padding:0;outline:none;border:none;border-radius:50%;width:50px;height:50px;color:#fff}
+#back-to-top{position:fixed;justify-content:center;align-items:center;bottom:120px;right:15px;opacity:0;cursor:pointer;z-index:999;background:#357376;padding:0;outline:none;border:none;border-radius:50%;width:50px;height:50px;color:#fff}
 #back-to-top:hover{background:#6BA8A9}
 
 /* #page */
@@ -281,6 +281,11 @@ header{position:relative;z-index:200}
     #aside-nav-toggle{display:inline-block;cursor:pointer}
     #main-content{padding-right:0}
     #page-content{padding-right:0}
+}
+
+@media only screen and (max-width:767px) {
+    .site-title{font-size:35px}
+    #slider-caption{font-size:17vw}
 }
 
 @media only screen and (max-width:500px) {
