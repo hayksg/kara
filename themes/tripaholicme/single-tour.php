@@ -44,10 +44,8 @@
 			<div class="col-md-9 col-md-pull-3">
 				<div id="page-content">
 					
-				
                     <?php while(have_posts()) : ?>
                     <?php the_post(); ?>
-
                     
                     <h1 id="page-title"><?php the_title(); ?></h1>
                     <?php if ( has_post_thumbnail() ) : ?>
@@ -57,11 +55,9 @@
                     <br>
                     <div><?php the_content(); ?></div>
 
-                        
-
-                        
-
                     <?php endwhile; ?>
+
+                    <?php get_template_part( 'template-parts/content', 'contact-form' ); ?>
 					
 				</div>
 			</div>

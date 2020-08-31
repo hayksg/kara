@@ -225,6 +225,146 @@ header{position:relative;z-index:200}
 .bx-wrapper .bx-prev:hover,.bx-wrapper .bx-next:hover{opacity:1}
 #bxslider-bottom-bg{position:absolute;left:0;bottom:-1px;width:100%;height:61px;z-index:100}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contact-form-title{margin:50px 0 0}
+
+.tripaholicme-contact-form {
+    padding: 40px 0 0;
+    max-width: 500px;
+    width: 100%;
+}
+.tripaholicme-contact-form .form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+.tripaholicme-contact-form .form-group:before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #cbcbcb;
+}
+.tripaholicme-contact-form .form-group .invalid-feedback {
+    text-transform: uppercase;
+    font-size: 9px;
+}
+.tripaholicme-form-control {
+    resize: vertical;
+    border-radius: 0;
+    border: none;
+    padding: 8px 15px;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.tripaholicme-form-control::-webkit-input-placeholder {
+    text-transform: uppercase;
+}
+.tripaholicme-form-control::-moz-placeholder {
+    text-transform: uppercase;
+}
+.tripaholicme-form-control:-ms-input-placeholder {
+    text-transform: uppercase;
+}
+.tripaholicme-form-control:-moz-placeholder {
+    text-transform: uppercase;
+}
+.tripaholicme-form-control:hover, .tripaholicme-form-control:focus, .tripaholicme-form-control:active {
+    box-shadow: none;
+}
+.app-form-submition-info {
+    display: none;
+}
+.app-form-message-box {
+    height: 50px;
+    margin-top: 30px;
+}
+.loader {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #3498db;
+    border-bottom: 6px solid #3498db;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin-right:10px;
+}
+@-webkit-keyframes spin {
+    0% {
+    -webkit-transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+}
+}@keyframes spin {
+    0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}.app-submission-process {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+.js-show-feedback {
+    display: block;
+}
+.btn-tripaholicme-form {
+    background-color: #898989;
+    border-radius: 2px;
+    font-size: 26px;
+    color: #fff;
+    padding: 14px 60px;
+    font-weight: 100;
+    border: none;
+    -webkit-transition: all 320ms;
+    -moz-transition: all 320ms;
+    -ms-transition: all 320ms;
+    -o-transition: all 320ms;
+    transition: all 320ms;
+}
+.btn-tripaholicme-form:hover, .btn-tripaholicme-form:focus {
+    background-color: #ccc;
+}
+
+
+
+textarea#message{min-height:150px}
+
 /* -----------------------------------------
 
 #media queries
