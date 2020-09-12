@@ -1,6 +1,6 @@
 <hr>
 
-<h3 id="contact-form-title">Contact form</h3>
+<h3 id="contact-form-title">Apply for a tour</h3>
 
 <div class="app-form-message-box">
   <div class="app-form-submition-info js-form-submission">
@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div class="text-center">
+  <div>
     <button type="submit" class="btn btn-default btn-lg btn-tripaholicme-form">Submit</button>
   </div>
   
