@@ -80,13 +80,8 @@
 						<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 						<!-- Google Translate end -->
 
-						<div id="search">
-							<form class="search-form" method="GET" action="search.php" role="search" aria-label="sitewide">
-								<label class="sr-only" for="search-input">Search</label>
-								<input name="q" class="form-control search-input" placeholder="Search..." type="search" id="search-input">
-								<button type="submit"><i class="fa fa-search"></i></button>
-							</form>
-						</div>
+						<?php get_search_form(); ?>
+
 					</div>
 				</div>
 			</div>

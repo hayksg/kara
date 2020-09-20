@@ -192,6 +192,8 @@ header{position:relative;z-index:200}
 .page-category-link:hover,.page-category-link:focus{color:#8BBBBC;text-decoration:none}
 .page-category-link-active{color:#8BBBBC}
 #page-title{font-family:'Merriweather',serif;font-weight:900;font-size:40px;color:#333;margin-bottom:30px}
+.page-title{font-family:'Merriweather',serif;font-weight:900;font-size:40px;color:#333;margin-bottom:30px}
+.search-query{margin:0 0 100px}
 .fullwidth #page-content{padding-right:0}
 
 /* #bxslider */
