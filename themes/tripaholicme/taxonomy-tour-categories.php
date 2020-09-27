@@ -31,26 +31,19 @@
 			<div class="col-md-9 col-md-pull-3">
 				<div id="page-content">
 					
-				
-                    <?php while(have_posts()) : ?>
-                    <?php the_post(); ?>
-
-                    
-                    <h1 id="page-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-                    <div><?php the_excerpt(); ?></div>
-                 
-					<hr>
-                        
-
-                        
-
-                    <?php endwhile; ?>
+				<?php if (!have_posts()) : ?>
+					<h2 class="page-title">There are no items in this category</h2>
+				<?php else : ?>
+					<?php while(have_posts()) : ?>
+					<?php the_post(); ?>
 					
-
-         
-
-
+                    <h2 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <div><?php the_excerpt(); ?></div>
+					<hr>
+                    
+                    <?php endwhile; ?>
+				<?php endif ?>
+                    
 				</div>
 
 				<?php echo paginate_links() ?>

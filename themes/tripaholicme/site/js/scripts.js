@@ -37,7 +37,6 @@
 	// Page aside toggle
 	$("#aside-nav-toggle").on("click", function(){
 		$("#aside-nav").stop().slideToggle();
-		
 	});
 
 	// bxSlider
@@ -213,7 +212,6 @@
 
 	$(window).load(function() {
 
-
 		// Google translate
 		var tt = $('.goog-te-gadget').contents().filter(function(){
 			return this.nodeType === 3; //Node.TEXT_NODE
@@ -233,23 +231,11 @@
 	
 	});
 
-
-
-
-
-
 	$( "#page-category-links a" ).each(function() {
 		if ($(location).attr("href").indexOf($(this).attr('href')) > -1) {
 			$(this).css('color', '#8BBBBC');
 		}
 	});
-
-
-
-
-
-
-
 
 	/* Back to top */
 
@@ -274,34 +260,16 @@
 	    return false;
 	});
 
-
-
-
-
-
-
-
-	
-		
-
-
-
-
-
-
-
-
-
 	 /* Contact form submission */
 
 	
 
-	 function validateEmail(email) {
+	function validateEmail(email) {
 		var re = /\S+@\S+\.\S+/;
 		return re.test(email);
-	  }
+	}
 	
-	  $('#tripaholicmeContactForm').on('submit', function(e) {
+	$('#tripaholicmeContactForm').on('submit', function(e) {
 		e.preventDefault();
 	
 		var form = $(this);
@@ -316,65 +284,69 @@
 		var ajaxUrl = form.data('url');
 	
 		if (name === '') {
-		  form.find('#name').addClass('is-invalid');
-		  formError = true;
+		  	form.find('#name').addClass('is-invalid');
+		  	formError = true;
 		}
 	
 		if (email === '' || !validateEmail(email)) {
-		  form.find('#email').addClass('is-invalid');
-		  formError = true;
+		  	form.find('#email').addClass('is-invalid');
+		  	formError = true;
 		}
 	
 		if (message === '') {
-		  form.find('#message').addClass('is-invalid');
-		  formError = true;
+		  	form.find('#message').addClass('is-invalid');
+		  	formError = true;
 		}
 	
 		if (formError) {
-		  return;
+		  	return;
 		}
 	
 		form.find('input, textarea, button').attr('disabled', 'disabled');
 		$('.js-form-submission').addClass('js-show-feedback');
 	
 		$.ajax({
-		  url: ajaxUrl,
-		  type: 'post',
-		  data: {
-			name: name,
-			email: email,
-			message: message,
-			action: 'tripaholicme_save_user_contact_form'
-		  },
-		  error: function(response) {
-			$('.js-form-submission').removeClass('js-show-feedback');
-			$('.js-form-error').addClass('js-show-feedback');
-			form.find('input, textarea, button').removeAttr('disabled');
-		  },
-		  success: function(response) {
-	
-			if (response == 0) {
-	
-			  setTimeout(function(){
+		  	url: ajaxUrl,
+		  	type: 'post',
+		  	data: {
+				name: name,
+				email: email,
+				message: message,
+				action: 'tripaholicme_save_user_contact_form'
+		  	},
+		  	error: function(response) {
 				$('.js-form-submission').removeClass('js-show-feedback');
 				$('.js-form-error').addClass('js-show-feedback');
 				form.find('input, textarea, button').removeAttr('disabled');
-			  }, 2000);
+		  	},
+		  	success: function(response) {
+	
+				if (response == 0) {
+	
+			  		setTimeout(function(){
+						$('.js-form-submission').removeClass('js-show-feedback');
+						$('.js-form-error').addClass('js-show-feedback');
+						form.find('input, textarea, button').removeAttr('disabled');
+			  		}, 2000);
 			  
-			} else {
+				} else {
 	
-			  setTimeout(function(){
-				$('.js-form-submission').removeClass('js-show-feedback');
-				$('.js-form-success').addClass('js-show-feedback');
-				form.find('input, textarea, button').removeAttr('disabled').val('');
-			  }, 2000);
+			  		setTimeout(function(){
+						$('.js-form-submission').removeClass('js-show-feedback');
+						$('.js-form-success').addClass('js-show-feedback');
+						form.find('input, textarea, button').removeAttr('disabled').val('');
+					}, 2000);
 	
-			}
-		  }
+				}
+		  	}
 		});
-	  });
+	});
+
+	// Nav current link
+	$( "#nav>li>a" ).each(function() {
+		if ($(location).attr("href") === $(this).attr('href')) {
+			$(this).addClass('header-nav-for-hover')
+		}
+	});
 
 })(jQuery);
-
-
-

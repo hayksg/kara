@@ -31,24 +31,17 @@
 			<div class="col-md-9 col-md-pull-3">
 				<div id="page-content">
 					
-				
                     <?php while(have_posts()) : ?>
                     <?php the_post(); ?>
 
-                    
-                    <h1 id="page-title"><?php the_title(); ?></h1>
+                    <h1 class="page-title"><?php the_title(); ?></h1>
                     <?php if ( has_post_thumbnail() ) : ?>
                         <img src="<?php the_post_thumbnail_url() ?>" alt="page image">
                     <?php endif ?>
 
-                    
                     <br>
                     <br>
                     <div><?php the_content(); ?></div>
-
-                        
-
-                        
 
                     <?php endwhile; ?>
 					

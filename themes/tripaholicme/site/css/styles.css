@@ -27,7 +27,6 @@ header{position:relative;z-index:200}
 .header-phone{display:inline-block;color:#fff;text-decoration:none;transition:color 320ms;padding:16px 0;position:relative;top:-2px}
 .header-phone span{margin-left:5px}
 .header-phone:hover,.header-phone:focus{color:#8BBBBC;text-decoration:none}
-
 .header-top-right-block{text-align:right;display:flex;justify-content:flex-end;align-items:center;min-height:52px}
 
 #social-media-links{display:block;position:fixed;left:0;top:50%;transform:translateY(-50%);width:40px;z-index:400}
@@ -79,8 +78,6 @@ header{position:relative;z-index:200}
 #nav ul{padding:0;margin:0;display:none;text-align:left}
 #nav ul li{width:100%}
 #nav ul a,#nav ul span{font-size:15px;padding:10px 15px;text-align:left;width:100%;text-transform:capitalize}
-#nav>li:nth-last-of-type(-n+3) ul{left:auto;right:0}
-#nav>li:nth-last-of-type(-n+3) ul ul{left:auto;right:100%}
 
 /* Section categories */
 #categories{position:relative;min-height:290px}
@@ -160,11 +157,6 @@ header{position:relative;z-index:200}
 .footer-top-in-fourth{width:25%}
 .footer-logo{display:inline-block;margin-top:55px}
 .footer-logo img{width:141px;height:auto}
-/* .soc-links-clone #social-media-links{display:inline-block;position:static;margin:17px 10px}
-.soc-links-clone .social-media-link{display:inline-block;text-decoration:none;margin-bottom:0;background:none;border-radius:0}
-.soc-links-clone .social-media-link img{width:auto}
-#social-media-links-2 a{text-decoration:none}
-#social-media-links-2 img{max-width:20px;margin-right:5px} */
 .connect-with-us{font-family:'Poppins',sans-serif;font-weight:500;font-size:16px;color:#231f20;margin:86px 0 0;line-height:1}
 .connect-with-us h4{font-family:'Poppins',sans-serif;font-weight:600;font-size:22px;color:#231f20;margin-bottom:10px}
 .connect-with-us .connect-box{margin-top:7px}
@@ -181,19 +173,27 @@ header{position:relative;z-index:200}
 #footer-right-block{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#fff;text-align:right}
 #back-to-top{position:fixed;justify-content:center;align-items:center;bottom:100px;right:15px;opacity:0;cursor:pointer;z-index:999;background:#357376;padding:0;outline:none;border:none;border-radius:50%;width:50px;height:50px;color:#fff}
 #back-to-top:hover{background:#6BA8A9}
+/* Pagination */
+.page-numbers{color:#6BA8A9;font-size:20px;transition:all 320ms}
+.page-numbers:hover,.page-numbers:focus{color:#357376;text-decoration:none}
+.page-numbers.current{color:#444}
 
 /* #page */
 #page-main{padding:50px 0 100px}
 #page-content{padding-right:50px}
+.search-results #page-content{margin-top:100px}
 #page-aside{background:#357376;padding:10px 20px;border-radius:5px;color:#fff;margin-bottom:40px}
 .aside-header{margin-bottom:20px}
 #page-category-links{margin:0 0 30px;padding:0 0 20px;list-style:none;border-bottom:1px solid #8BBBBC}
 .page-category-link{display:inline-block;line-height:1;font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;color:#fff;text-decoration:none;transition:all 320ms;padding:10px 0}
 .page-category-link:hover,.page-category-link:focus{color:#8BBBBC;text-decoration:none}
 .page-category-link-active{color:#8BBBBC}
-#page-title{font-family:'Merriweather',serif;font-weight:900;font-size:40px;color:#333;margin-bottom:30px}
-.page-title{font-family:'Merriweather',serif;font-weight:900;font-size:40px;color:#333;margin-bottom:30px}
-.search-query{margin:0 0 100px}
+.page-title{font-family:'Merriweather',serif;font-weight:900;font-size:40px;color:#357376;margin-bottom:30px;line-height:1}
+.page-title a{color:#357376;transition:all 320ms}
+.page-title a:hover,.page-title:focus{color:#444;text-decoration:none}
+.search-query{line-height:1;font-size:50px;color:#444}
+.search-query-text{color:#357376}
+.search-no-result{color:#357376}
 .fullwidth #page-content{padding-right:0}
 
 /* #bxslider */
@@ -259,6 +259,7 @@ textarea#message{min-height:150px}
     #search{display:inline-block !important}
     #nav > li > a:first-child::before{content:'';position:absolute;bottom:-2px;left:0;height:0;width:0;height:4px;background:#6BA8A9;transition:width .3s}
     #nav > li:hover a::before{width:100%}
+    .header-nav-for-hover::before{width:100%!important}
     #aside-nav{display:block!important}
 }
 
@@ -298,6 +299,10 @@ textarea#message{min-height:150px}
     .footer-top-in-fourth{width:50%;order:4}
     #footer-right-block{text-align:center}
     #back-to-top{bottom:120px}
+    .search-query{font-size:35px}
+    .page-title{font-size:30px}
+    .search-no-result {font-size:23px}
+    .search-results #page-content{margin-top:60px}
 
     /* page */
     #page-main{padding:30px 0 80px}

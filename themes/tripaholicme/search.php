@@ -13,7 +13,7 @@
 
                         <?php $postType = get_post_type(); ?>
 
-                        <?php if ( $postType == 'post' ) : ?>
+                        <?php if ( !empty(esc_html(get_search_query(false))) && $postType == 'post' ) : ?>
                             <ul id="page-category-links">
                                 <?php     
                                     $categories = get_categories();
@@ -48,28 +48,42 @@
 			</div>
 			<div class="col-md-9 col-md-pull-3">
 
-                <h1 class="page-title search-query">You searched for &ldquo;<?php echo esc_html(get_search_query(false)) ?>&rdquo;</h1>
+                <h1 class="page-title search-query">You searched for &ldquo;<span class="search-query-text"><?php echo esc_html(get_search_query(false)) ?></span>&rdquo;</h1>
 
                 <?php if (have_posts() && !empty(esc_html(get_search_query(false)))) : ?>
                     <div id="page-content">
-                    
-                        <?php while(have_posts()) : ?>
-                        <?php the_post(); ?>
 
-                        <h2 id="page-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        <?php
 
-                        <div><?php the_excerpt(); ?></div>
-                    
-                        <hr>
+                            $front_page_id = get_option( 'page_on_front' );
+                            $blog_page_id  = get_option( 'page_for_posts' );
+
+                            $customQuery = new WP_Query(array(
+                                'paged'     => get_query_var( 'paged', 1 ),   // For pagination // find all pages ( if no pages, set to 1 )
+                                'post_type' => array('page', 'post', 'tour'), // Search only in post types with not empty content
+                                'orderby' => 'title',
+                                'order' => 'ASC',
+                                'post__not_in' => array($front_page_id, $blog_page_id)
+                            ));
+
+                        ?>
+
+                        <?php while ($customQuery->have_posts()) : $customQuery->the_post() ?>
                             
+                            <h2 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+                            <div><?php the_excerpt(); ?></div>
+                        
+                            <hr>
+
                         <?php endwhile; ?>
                         
                     </div>
 
-                    <?php echo paginate_links() ?>
+                    <?php echo paginate_links(array( 'total' => $customQuery->max_num_pages ) ) ?>
 
                 <?php else : ?>
-		            <h2 class="headline headline--small-plus">No results match that search.</h2>
+		            <h2 class="search-no-result">No results match that search.</h2>
 	            <?php endif; ?>
 			</div>
 		</div>
