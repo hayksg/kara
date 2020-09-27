@@ -12,24 +12,24 @@
                     <div class="footer-top-in-second">
                         <div class="footer-links">
                             <div class="footer-top-links-box">
-                                <ul>
-                                    <li><a href="./">Some Link 1</a></li>
-                                    <li><a href="./">Some Link 2</a></li>
-                                    <li><a href="./">Some Link 3</a></li>
-                                    <li><a href="./">Some Link 4</a></li>
-                                </ul>
+                            <?php
+                                wp_nav_menu(array(
+                                    'theme_location' => 'footerMenu1Location',
+                                    'menu_class'     => 'footer-menu',
+                                ));
+                            ?>
                             </div>
                         </div>
                     </div>
                     <div class="footer-top-in-third">
                         <div class="footer-links">
                             <div class="footer-top-links-box">
-                                <ul>
-                                    <li><a href="./">Some Link 1</a></li>
-                                    <li><a href="./">Some Link 2</a></li>
-                                    <li><a href="./">Some Link 3</a></li>
-                                    <li><a href="./">Some Link 4</a></li>
-                                </ul>
+                            <?php
+                                wp_nav_menu(array(
+                                    'theme_location' => 'footerMenu2Location',
+                                    'menu_class'     => 'footer-menu',
+                                ));
+                            ?>
                             </div>
                         </div>
                     </div>

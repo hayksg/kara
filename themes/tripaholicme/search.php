@@ -53,22 +53,7 @@
                 <?php if (have_posts() && !empty(esc_html(get_search_query(false)))) : ?>
                     <div id="page-content">
 
-                        <?php
-
-                            $front_page_id = get_option( 'page_on_front' );
-                            $blog_page_id  = get_option( 'page_for_posts' );
-
-                            $customQuery = new WP_Query(array(
-                                'paged'     => get_query_var( 'paged', 1 ),   // For pagination // find all pages ( if no pages, set to 1 )
-                                'post_type' => array('page', 'post', 'tour'), // Search only in post types with not empty content
-                                'orderby' => 'title',
-                                'order' => 'ASC',
-                                'post__not_in' => array($front_page_id, $blog_page_id)
-                            ));
-
-                        ?>
-
-                        <?php while ($customQuery->have_posts()) : $customQuery->the_post() ?>
+                        <?php while (have_posts()) : the_post() ?>
                             
                             <h2 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
@@ -80,7 +65,7 @@
                         
                     </div>
 
-                    <?php echo paginate_links(array( 'total' => $customQuery->max_num_pages ) ) ?>
+                    <?php echo paginate_links() ?>
 
                 <?php else : ?>
 		            <h2 class="search-no-result">No results match that search.</h2>

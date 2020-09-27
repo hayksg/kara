@@ -60,8 +60,9 @@ header{position:relative;z-index:200}
 #search{display:inline-block;margin-left:23px}
 #search form{position:relative;display:inline-block;width:245px;height:41px;margin-bottom:0}
 #search input{width:245px;height:41px;padding:0 45px 0 19px;font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#000;border:none;background-color:#f7f7f7}
-#search button{background:none;border:none;cursor:pointer;padding:0;margin:0;position:absolute;top:20%;right:15px;font-size:20px;color:#ff7200!important;text-transform:uppercase}
+#search button{background:none;border:none;cursor:pointer;padding:0;margin:0;position:absolute;top:20%;right:15px;transition:all 320ms;outline:none}
 #search button i{color:#357376!important}
+#search button:hover{transform:scale(1.3)}
 #search input::-webkit-input-placeholder{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#b5b3b4}
 #search input:-moz-placeholder{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#b5b3b4}
 #search input::-moz-placeholder{font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:#b5b3b4}

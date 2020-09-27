@@ -116,10 +116,6 @@
                 991: {
 					items: hotToursItems(3),
 					nav: hotToursNav(3),
-				},
-				1400: {
-					items: hotToursItems(4),
-					nav: hotToursNav(4),
 				}
             }
 		});
@@ -347,6 +343,11 @@
 		if ($(location).attr("href") === $(this).attr('href')) {
 			$(this).addClass('header-nav-for-hover')
 		}
+	});
+
+	// Attr target to footer links
+	$('.footer-top-links-box a').each(function(){
+		$(this).attr("target","_blank");
 	});
 
 })(jQuery);
