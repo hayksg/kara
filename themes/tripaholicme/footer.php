@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="connect-box">
-                                <div class="connect-box-in"><span>Phone</span>: <a href="tel:<?php echo esc_attr(get_option( 'business_phone' )) ?>"><?php echo esc_attr(get_option( 'business_phone' )) ?></a></div>
+                                <div class="connect-box-in"><span>Phone</span>: <a href="tel:<?php echo preg_replace('/[^0-9.]+/', '', esc_attr(get_option( 'business_phone' ))) ?>"><?php echo esc_attr(get_option( 'business_phone' )) ?></a></div>
                                 <div class="connect-box-in"><span>Email</span>: <a href="mailto:<?php echo esc_attr(get_option( 'business_email' )) ?>"><?php echo esc_attr(get_option( 'business_email' )) ?></a></div>
                             </div>
                         </div>

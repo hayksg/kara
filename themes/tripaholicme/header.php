@@ -34,7 +34,7 @@
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 							<span><?php echo esc_attr(get_option( 'business_email' )) ?></span> 
 						</a>
-						<a href="tel:<?php echo esc_attr(get_option( 'business_phone' )) ?>" class="header-phone">
+						<a href="tel:<?php echo preg_replace('/[^0-9.]+/', '', esc_attr(get_option( 'business_phone' ))) ?>" class="header-phone">
 							<i class="fa fa-phone" aria-hidden="true"></i>
 							<span><?php echo esc_attr(get_option( 'business_phone' )) ?></span> 
 						</a>
