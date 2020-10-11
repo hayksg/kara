@@ -30,11 +30,11 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="header-top-left-block">
-						<a href="mailto:name@email.com" class="header-email">
+						<a href="mailto:<?php echo esc_attr(get_option( 'business_email' )) ?>" class="header-email">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 							<span><?php echo esc_attr(get_option( 'business_email' )) ?></span> 
 						</a>
-						<a href="tel:9015441100" class="header-phone">
+						<a href="tel:<?php echo esc_attr(get_option( 'business_phone' )) ?>" class="header-phone">
 							<i class="fa fa-phone" aria-hidden="true"></i>
 							<span><?php echo esc_attr(get_option( 'business_phone' )) ?></span> 
 						</a>

@@ -89,6 +89,21 @@ function tripaholicme_custom_settings() {
     add_settings_field( 'twitter_handler', 'Twitter handler', 'tripaholicme_twitter', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
     add_settings_field( 'instagram_handler', 'Instagram handler', 'tripaholicme_instagram', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
     add_settings_field( 'youtube_handler', 'Youtube handler', 'tripaholicme_youtube', 'tripaholicme-main-options-slug', 'tripaholicme-main-options' );
+
+    // footer options
+    add_settings_section( 'tripaholicme-footer-options', 'Footer Options', 'tripaholicme_footer_options', 'tripaholicme-footer-options-slug' );
+
+    register_setting( 'tripaholicme-footer-settings-group', 'footer_connect_title' );
+    register_setting( 'tripaholicme-footer-settings-group', 'footer_business_days' );
+    register_setting( 'tripaholicme-footer-settings-group', 'footer_business_hours' );
+    register_setting( 'tripaholicme-footer-settings-group', 'footer_address' );
+    register_setting( 'tripaholicme-footer-settings-group', 'footer_motto' );
+
+    add_settings_field( 'footer_connect_title', 'Connect Title', 'tripaholicme_footer_connect_title', 'tripaholicme-footer-options-slug', 'tripaholicme-footer-options' );
+    add_settings_field( 'footer_business_days', 'Business Days', 'tripaholicme_footer_business_days', 'tripaholicme-footer-options-slug', 'tripaholicme-footer-options' );
+    add_settings_field( 'footer_business_hours', 'Business Hours', 'tripaholicme_footer_business_hours', 'tripaholicme-footer-options-slug', 'tripaholicme-footer-options' );
+    add_settings_field( 'footer_address', 'Address', 'tripaholicme_footer_address', 'tripaholicme-footer-options-slug', 'tripaholicme-footer-options' );
+    add_settings_field( 'footer_motto', 'Motto', 'tripaholicme_footer_motto', 'tripaholicme-footer-options-slug', 'tripaholicme-footer-options' );
 }
 
 // Header Options Functions
@@ -138,6 +153,35 @@ function tripaholicme_about_us_bg_picture() {
   
    
     echo '<input type="button" class="button button-secondary" value="Upload About Us Background Picture" id="upload-button">';
+}
+
+function tripaholicme_footer_options() {
+    echo "Customize your Footer Information";
+}
+
+function tripaholicme_footer_connect_title() {
+    $footerConnectTitle = esc_attr(get_option( 'footer_connect_title' ));
+    echo '<input type="text" name="footer_connect_title" class="admin-main-input" value="' . $footerConnectTitle . '" placeholder="Input title here">';
+}
+
+function tripaholicme_footer_business_days() {
+    $footerBusinessDays = esc_attr(get_option( 'footer_business_days' ));
+    echo '<input type="text" name="footer_business_days" class="admin-main-input" value="' . $footerBusinessDays . '" placeholder="Input days here">';
+}
+
+function tripaholicme_footer_address() {
+    $footerAddress = esc_attr(get_option( 'footer_address' ));
+    echo '<input type="text" name="footer_address" class="admin-main-input" value="' . $footerAddress . '" placeholder="Input address here">';
+}
+
+function tripaholicme_footer_business_hours() {
+    $footerBusinessHours = esc_attr(get_option( 'footer_business_hours' ));
+    echo '<input type="text" name="footer_business_hours" class="admin-main-input" value="' . $footerBusinessHours . '" placeholder="Input hours here">';
+}
+
+function tripaholicme_footer_motto() {
+    $footerMotto = esc_attr(get_option( 'footer_motto' ));
+    echo '<input type="text" name="footer_motto" class="admin-main-input" value="' . $footerMotto . '" placeholder="Input text here">';
 }
 
 function tripaholicme_facebook() {
